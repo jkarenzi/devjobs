@@ -8,6 +8,7 @@ module.exports = {
       colors:{
         custom:{
           violet: "#5964E0",
+          paleViolet:"rgba(89, 100, 224, 0.2)",
           lightViolet: "#939bf4",
           darkBlue: "#19202d",
           midnight: "#121721",

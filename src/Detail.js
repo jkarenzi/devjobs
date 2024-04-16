@@ -8,7 +8,7 @@ const Detail = () => {
     const [job, setJob] = useState(null)
 
     useEffect(() => {
-        fetch(`http://localhost:4000/jobs/${id}`)
+        fetch(`https://devjobs-backend-tfek.onrender.com/jobs/${id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -24,15 +24,15 @@ const Detail = () => {
             <div className="relative flex flex-col w-full items-center">
                 <Header search={false}/>
                 {job && <div className={`flex items-center w-3/5 h-28 ${theme === 'light'?'bg-white':'bg-custom-darkBlue'} rounded-sm absolute bottom-[-80px]`}>
-                    <div className="flex w-1/5 h-full">
-                        <img src={job.logo} className="w-full h-full"/>
+                    <div className="flex items-center justify-center w-1/5 h-full">
+                        <img src={job.logo} width="40px" height="40px"/>
                     </div>
                     <div className="flex items-center justify-between w-4/5 h-full">
                         <div className="flex flex-col items-start ml-10 gap-1">
-                            <h4 className="text-custom-darkBlue font-semibold">{job.company}</h4>
-                            <h4 className="text-custom-darkBlue font-light">{job.company}.com</h4>
+                            <h4 className={`${theme == 'light'?'text-custom-darkBlue':'text-white'} font-semibold`}>{job.company}</h4>
+                            <h4 className={`${theme == 'light'?'text-custom-darkBlue':'text-custom-darkGrey'} font-light`}>{job.company}.com</h4>
                         </div>
-                        <a href={job.website} className="flex justify-center items-center w-32 h-8 bg-custom-lightViolet text-custom-violet rounded-sm mr-10">Company Site</a>
+                        <a href={job.website} className={`flex justify-center items-center w-32 h-8 ${theme === 'light'?'bg-custom-paleViolet':'bg-custom-darkGrey'}  ${theme === 'light'?'text-custom-violet':"text-white"} rounded-sm mr-10`}>Company Site</a>
                     </div>
                 </div>}
             </div>

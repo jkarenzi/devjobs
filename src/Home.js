@@ -7,8 +7,9 @@ import { ThemeContext } from "./ThemeContext";
 const Home = () => {
     const navigate = useNavigate()
     const [jobs, setJobs] = useState([])
+    
     useEffect(() => {
-        fetch("http://localhost:4000/jobs")
+        fetch("https://devjobs-backend-tfek.onrender.com/jobs")
         .then(res => res.json())
         .then(data => setJobs(data))
     },[])
@@ -30,7 +31,7 @@ const Home = () => {
                             <div className="flex flex-col items-start gap-6">
                                 <div className="flex flex-col items-start gap-1 text-custom-darkGrey">
                                     <h4 className="text-sm">{job.postedAt} . {job.contract}</h4>
-                                    <h3 onClick={() => detail(job.id)} className={`font-bold ${theme == 'light'?'text-custom-darkBlue':'text-white'} text-left`}>{job.position}</h3>
+                                    <h3 onClick={() => detail(job.id)} className={`font-bold ${theme == 'light'?'text-custom-darkBlue':'text-white'} text-left cursor-pointer`}>{job.position}</h3>
                                     <h4 className="text-sm">{job.company}</h4>
                                 </div>
                                 <h5 className="text-custom-violet text-sm">{job.location}</h5>
