@@ -4,6 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens:{
+      'xs': '320px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1440px',
+    },
     extend: {
       colors:{
         custom:{
@@ -14,7 +20,8 @@ module.exports = {
           midnight: "#121721",
           lightGrey:"#f4f6f8",
           gray:"#9daec2",
-          darkGrey: "#6e8098"
+          darkGrey: "#6e8098",
+          darkdarkGrey: "#384B5C"
         }
       }
     },
